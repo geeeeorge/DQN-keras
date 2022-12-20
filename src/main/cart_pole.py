@@ -42,7 +42,7 @@ agent = DQNAgent(actions=actions,
                  is_ddqn=False)
 
 step_history = []
-nb_episodes = 1000
+nb_episodes = 10
 with tqdm.trange(nb_episodes) as t:
     for episode in t:
         # agent.reset()
@@ -81,4 +81,4 @@ x = np.arange(len(step_history))
 plt.ylabel('step')
 plt.xlabel('episode')
 plt.plot(x, step_history)
-plt.savefig('images/result.png')
+plt.savefig('../../images/cart_pole_result.png')
