@@ -15,12 +15,9 @@ class SimpleNeuralNet:
         x = Dense(32, activation='relu')(x)
         output_layer = Dense(self.nb_output, activation='linear')(x)
         model = Model(inputs=input_layer, outputs=output_layer)
-        summary = model.summary()
+        model.summary()
 
-        return model, summary
+        return model
 
     def model(self):
-        return self._build_network()[0]
-
-    def summary(self):
-        return self._build_network()[1]
+        return self._build_network()

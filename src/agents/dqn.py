@@ -1,4 +1,9 @@
-class DQNAgent():
+import tensorflow as tf
+import numpy as np
+import copy
+
+
+class DQNAgent:
     """
         Deep Q Network Agent
     """
@@ -22,6 +27,7 @@ class DQNAgent():
                  optimizer=None,
                  is_ddqn=False):
 
+        self.recent_action_id = None
         self.training = training
         self.policy = policy
         self.actions = actions
